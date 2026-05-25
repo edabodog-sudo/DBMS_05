@@ -139,13 +139,13 @@ for a lending fee calculation. Which type must be used instead?
 in this specific context. Is `NULL` the same as "zero days"? Justify with
 reference to the three-valued logic of SQL.
 
-> *Your answer:*
+> *Your answer:*NULL bedeutet, dass das Rückgabedatum noch unbekannt ist. NULL ist nicht gleich ‚null Tage‘, denn in der dreiwertigen Logik von SQL führen Vergleiche mit NULL immer zu UNKNOWN.
 
 **Question 1.3:** `beitritt_datum` should default to today's date when no value
 is provided. Write the `DEFAULT` expression you would use and explain why this
 is preferable to always supplying the date explicitly in the application.
 
-> *Your answer:*
+> *Your answer:*CURRENT_DATE setzt automatisch das heutige Datum, wenn kein Wert angegeben wird. Das ist besser, als das Datum immer in der Anwendung zu setzen, weil die Datenbank so konsistent bleibt und keine fehlerhaften oder vergessenen Werte entstehen.
 
 ---
 
