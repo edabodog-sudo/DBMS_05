@@ -133,7 +133,7 @@ for each temporal attribute.
 example — using arithmetic — of why `REAL` would produce an incorrect result
 for a lending fee calculation. Which type must be used instead?
 
-> *Your answer:*
+> *Your answer:*REAL führt bei Geldbeträgen zu Rundungsfehlern, während NUMERIC eine exakte Genauigkeit liefert und daher für Euro-Beträge zwingend erforderlich ist.Beispiel: 1.30 * 3 ergibt mit REAL oft 3.899999 statt 3.90.
 
 **Question 1.2:** `rueckgabe_datum` must be nullable. Explain what `NULL` means
 in this specific context. Is `NULL` the same as "zero days"? Justify with
