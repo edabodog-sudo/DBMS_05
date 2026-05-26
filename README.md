@@ -268,9 +268,9 @@ INSERT INTO ausleihe VALUES (1, 1, 1, '2026-05-10', '2026-05-01');
 
 > *Describe the error or result for each test:*
 >
-> - Test A:
-> - Test B:
-> - Test C:
+> - Test A:CHECK‑Fehler — negative tagesgebuehr ist nicht erlaubt.
+> - Test B:NOT NULL‑Fehler — email darf nicht fehlen.
+> - Test C:CHECK‑Fehler — rueckgabe_datum < ausleihe_datum ist unzulässig.
 
 ### Questions for Task 2
 
