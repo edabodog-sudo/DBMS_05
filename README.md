@@ -278,19 +278,21 @@ INSERT INTO ausleihe VALUES (1, 1, 1, '2026-05-10', '2026-05-01');
 constraint rather than a column constraint. Why is a column constraint
 insufficient here?
 
-> *Your answer:*
+> *Your answer:*Ein Column‑CHECK kann nur den Wert einer einzigen Spalte prüfen.
+Der Vergleich rueckgabe_datum >= ausleihe_datum braucht aber zwei Spalten gleichzeitig.
+Deshalb reicht ein Column‑CHECK nicht aus und man muss ein Table‑CHECK verwenden.
 
 **Question 2.2:** You chose `ON DELETE RESTRICT` for all foreign keys.
 Describe a realistic alternative: for which relationship would `ON DELETE
 CASCADE` be appropriate instead, and why?
 
-> *Your answer:*
+> *Your answer:*ON DELETE CASCADE wäre sinnvoll bei buch → exemplar: Wenn ein Buch gelöscht wird, sollten alle Exemplare automatisch verschwinden, weil sie ohne Buch bedeutungslos sind.
 
 **Question 2.3:** `email` is declared `UNIQUE`. According to the SQL standard,
 how many `NULL` values may a `UNIQUE` column contain? Explain using the
 three-valued logic of SQL.
 
-> *Your answer:*
+> *Your answer:*Mehrere NULL‑Werte sind erlaubt, weil NULL ≠ NULL (Vergleich ergibt UNKNOWN). Deshalb verletzt es UNIQUE nicht.
 
 ---
 
