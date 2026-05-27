@@ -1,3 +1,4 @@
+<img width="870" height="220" alt="Screenshot 2026-05-25 181233" src="https://github.com/user-attachments/assets/1ea522f1-f925-4b53-8ae3-e8f128c5a367" />
 # DBMS_05 – From Schema to Data: DDL and DML in Practice
 
 **Module:** Databases · THGA Bochum  
@@ -51,7 +52,8 @@ git --version
 > **Screenshot 1:** Take a screenshot of your terminal showing both
 > successful version checks and insert it here.
 >
-> `[insert screenshot]`
+> `[insert screenshot]`<img width="870" height="220" alt="Screenshot 2026-05-25 181233" src="https://github.com/user-attachments/assets/a95fb5a7-a23f-48f4-9183-4441afbf3acc" />
+
 
 ---
 
@@ -242,7 +244,8 @@ sqlite3 bibliothek.db ".schema"
 > **Screenshot 2:** Take a screenshot showing the `.tables` and `.schema`
 > output in your terminal.
 >
-> `[insert screenshot]`
+> `[insert screenshot]`<img width="975" height="826" alt="Screenshot 2026-05-26 105250" src="https://github.com/user-attachments/assets/cd378f4c-e09a-4db5-a5ea-42119bf593ba" />
+
 
 ### Task 2c – Test Constraints
 
@@ -553,7 +556,8 @@ SELECT * FROM ausleihe WHERE ausleihe_id = 5;
 
 > **Screenshot 3:** Take a screenshot showing the inserted row.
 >
-> `[insert screenshot]`
+> `[insert screenshot]`<img width="667" height="342" alt="Screenshot 2026-05-27 190031" src="https://github.com/user-attachments/assets/724886a0-315e-4035-874d-7023eb162a24" />
+
 
 ### Task 5b – Simulate a Rollback
 
@@ -673,7 +677,8 @@ mitglied → ausleihe
 > verification from Task 3a after completing all DML tasks, with
 > `.headers on` and `.mode column` active.
 >
-> `[insert screenshot]`
+> `[insert screenshot]`<img width="637" height="327" alt="Screenshot 2026-05-27 201755" src="https://github.com/user-attachments/assets/cb16b79e-b74e-4d29-aacb-75627107926e" />
+
 
 ---
 
