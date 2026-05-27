@@ -586,20 +586,29 @@ SELECT COUNT(*) FROM ausleihe WHERE ausleihe_id = 6;
 availability check and the insert happen inside the same transaction?
 What could go wrong if they ran as separate Autocommit statements?
 
-> *Your answer:*
+> *Your answer:*The availability check and the insert must be in the same transaction so that they behave like one single, atomic action.If they run separately, something can go wrong between the two steps.
+If they run as separate Autocommit statements:Two users could check availability at the same time
+( both see “available").Both try to insert the loan ( the second insert fails or creates inconsistent data).
 
 **Question 5.2:** The lecture states: "Ein fehlendes `WHERE` aktualisiert
 alle Zeilen." Write the single most dangerous `UPDATE` statement possible
 on this database and explain the damage it would cause. Then explain how
 `BEGIN` / `ROLLBACK` would allow you to recover.
 
-> *Your answer:*
+> *Your answer:*A missing WHERE updates every row in the table.
+The most dangerous UPDATE is one that destroys important data everywhere.A transaction acts like a safety net:
+You can undo the damage before committing.
 
 **Question 5.3:** Autocommit is convenient for read-only queries (`SELECT`).
 Is it also safe for DML in an interactive session? Give a concrete example
 from this exercise where Autocommit would have caused irreversible data loss.
 
-> *Your answer:*
+> *Your answer:**Autocommit is safe for SELECT, because reading data cannot break anything.
+But for DML (UPDATE, INSERT, DELETE), Autocommit is dangerous, because every statement is saved immediately and cannot be undone. CONGRETE EXAMPLE:
+> UPDATE ausleihe
+SET rueckgabe_datum = CURRENT_DATE;
+
+
 
 Commit:
 
