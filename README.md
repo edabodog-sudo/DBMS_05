@@ -490,14 +490,16 @@ ALTER TABLE exemplar
 nullable column. Why is this simpler than adding a `NOT NULL` column to an
 already-populated table? What steps would be needed for a `NOT NULL` column?
 
-> *Your answer:*
+> *Your answer:*Adding a column without NOT NULL is easy because SQLite can simply add the column and put NULL into all existing rows.No extra work is needed. Adding a NOT NULL column is harder, because every existing row must immediately have a valid value.
+SQLite cannot guess that value.
 
 **Question 4.2:** SQLite's limited `ALTER TABLE` support is a deliberate
 design decision. What does this tell you about the trade-off between a
 lightweight embedded database and a full-featured server database system?
 Name one scenario where SQLite is the right choice and one where it is not.
 
-> *Your answer:*
+> *Your answer:* SQLite keeps ALTER TABLE simple because it is a lightweight, embedded database.
+It chooses simplicity and small size over advanced features: Good for: small apps, mobile apps, single‑user programs.Not good for: big multi‑user systems or complex databases that need many schema changes.
 
 Commit:
 
