@@ -1,4 +1,4 @@
-<img width="870" height="220" alt="Screenshot 2026-05-25 181233" src="https://github.com/user-attachments/assets/1ea522f1-f925-4b53-8ae3-e8f128c5a367" />
+
 # DBMS_05 – From Schema to Data: DDL and DML in Practice
 
 **Module:** Databases · THGA Bochum  
