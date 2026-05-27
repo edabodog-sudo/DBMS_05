@@ -410,21 +410,26 @@ works because all affected rows are in the same table. Why can a standard SQL
 `UPDATE` not update rows in two different tables simultaneously, and what would
 you use instead in a production system?
 
-> *Your answer:*
+> *Your answer:*A standard SQL UPDATE can only change one table at a time.
+That’s because SQL is designed so that each UPDATE belongs to one specific table, which keeps the data safe and avoids conflicts.
 
 **Question 3.2:** Task 3b.3 raises the fee for books published before 1960
 by 10 cents. Write the equivalent statement using `NUMERIC` arithmetic:
 `tagesgebuehr = tagesgebuehr + 0.10`. Would the same statement work correctly
 with `REAL`? Explain the risk.
 
-> *Your answer:*
+> *Your answer:*The equivalent NUMERIC‑safe version of the update is:tagesgebuehr = tagesgebuehr + NUMERIC(0.10).It would work, but it is not safe.REAL uses floating‑point numbers, which can introduce rounding errors. 
+
 
 **Question 3.3:** Task 3c.1 deletes loans where the return date is more than
 30 days ago. A `DELETE` without a `WHERE` clause would delete all loans.
 Describe the operational consequence and explain how `BEGIN` / `ROLLBACK`
 protects against this mistake.
 
-> *Your answer:*
+> *Your answer:*  A `DELETE` without a `WHERE` it will remove all loan records from the table.
+Operationally, this means:the library system loses every loan history entry,you cannot see who borrowed what,you cannot calculate overdue fees,and the data is basically destroyed.`BEGIN` / `ROLLBACK`the deletion happens inside a transaction.'BEGIN' starts a protected block, 'ROLLBACK' cancels everything inside it.
+
+
 
 ---
 
