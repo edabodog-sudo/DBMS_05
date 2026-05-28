@@ -666,8 +666,8 @@ in SQLite? What alternative would you use, and in what order must the tables
 be emptied to respect foreign key constraints?
 
 > *Your answer:*No SQLite does not support TRUNCATE TABLE.
-This command exists in PostgreSQL, MySQL, SQL Server… but not in SQLite.b  Ein Alternative in SQLite is: DELETE FROM table_name;
-You must delete tables in an order that respects foreign key constraints. Sp the dependency chain is:
+This command exists in PostgreSQL, MySQL, SQL Server… but not in SQLite.  Ein Alternative in SQLite is: DELETE FROM table_name;
+You must delete tables in an order that respects foreign key constraints. So the dependency chain is:
 > buch → exemplar → ausleihe
 mitglied → ausleihe
 
