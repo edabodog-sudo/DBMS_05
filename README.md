@@ -581,9 +581,8 @@ Verify that neither change persisted:
 SELECT rueckgabe_datum FROM ausleihe WHERE ausleihe_id = 2;
 SELECT COUNT(*) FROM ausleihe WHERE ausleihe_id = 6;
 ```
-
-> *Describe what you see and explain why `ROLLBACK` reversed both changes:*
-
+> *Describe what you see and explain why 'ROLLBACK' reserved both changes: Inside the BEGIN…ROLLBACK block, both the UPDATE and the INSERT were only temporary.
+When we run ROLLBACK, SQLite cancels everything that happened in the transaction.
 ### Questions for Task 5
 
 **Question 5.1:** In the lending scenario, why is it important that the
